@@ -1,0 +1,11 @@
+<%= form_for task do |f| %>
+  <div class="form">
+    <li><%= f.label :title, "Insert the title" %></li>
+    <li><%= f.text_field :title %></li>
+    <br>
+    <li><%= f.label :details, "Insert the details" %></li>
+    <li><%= f.text_field :details %></li>
+    <br>
+    <li><%= f.submit %><li>
+  </div>
+<% end %>
