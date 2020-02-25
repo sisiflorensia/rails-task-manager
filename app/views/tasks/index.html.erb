@@ -1,0 +1,21 @@
+<div class="task-container">
+  <% @tasks.each do |task| %>
+    <p>
+      <span>
+        <% if task.completed%>
+          <i class="far fa-check-square text-primary mr-2"></i>
+        <% else %>
+          <i class="far fa-square text-warning mr-2"></i>
+        <% end %>
+        </span>
+      <span><%= link_to task.title.capitalize, task_path(task) %></span>
+      <span>
+        <%= link_to delete_task_path(task.id), method: :delete, data: { confirm: 'Do you really want to delete this task?' }, class: "text-danger ml-2" do %>
+          <i class="fas fa-trash-alt mr-2"></i>
+        <% end %>
+      </span>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "Create a new task", new_task_path, class: "btn btn-outline-primary w-25 py-2 my-4 mr-3" %>

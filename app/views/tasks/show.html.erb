@@ -1,0 +1,24 @@
+<h2 class="mb-3"><%= @task.title %></h2>
+<p class="task-detail mb-4"><%= @task.details %></p>
+
+<%#= link_to mark_task_path(@task), method: :patch, class:"text-secondary" do %>
+<!--   <i class="fas fa-check mr-2"></i>
+  Mark as complete -->
+<%# end %>
+
+<div class="another-container pr-2 mt-3">
+  <%= link_to delete_task_path(@task), method: :delete, class:"py-2 w-25 btn btn-outline-secondary" do %>
+    <i class="fas fa-trash-alt mr-2"></i>
+    Delete this task
+  <% end %>
+
+  <%= link_to edit_task_path(@task), class:"py-2 w-25 btn btn-outline-primary" do %>
+    <i class="far fa-edit mr-2"></i>
+    Edit this task
+  <% end %>
+</div>
+
+<%= link_to tasks_path, class:"my-2 py-2 w-50 btn btn-primary" do %>
+  <i class="far fa-eye mr-2"></i>
+  Show all tasks
+<% end %>
